@@ -1,0 +1,24 @@
+nome = input("Digite seu nome: ") #comando básico do input
+print(f"Olá, {nome}!") #usando f string com input
+
+idade = int(input("Digite sua idade: ")) #convertendo input para int
+altura = float(input("Digite sua altura em metros: ")) #convertendo para float
+print(f"Você tem {idade} anos e {altura}m de altura.") #usando com f string
+
+try: #tentar
+    numero = int(input("Digite um número:")) #definindo valor da variável numero
+    print(f"O dobro do número é {numero * 2}") #usando f string com dobro do valor da variável já apresentada
+except ValueError: #contanto QUE não...
+    print("Por favor, digite um número válido!") #exiba isso!
+
+#ou 
+
+try:
+    idade=int(input("Qual é a sua idade?"))
+    print("Se sua idade é", idade, "então seu irmão tem", idade*2)
+except ValueError:
+    print("Idade inválida!")
+
+valores=input("Digite dois números separados por espaço:").split() #com esse comando eu posso adicionar mais de um número em uma única variável
+num1, num2 = map(int, valores) #aqui define 2 valores e converte para int
+print(num1+num2) #ou print(f"Soma é:, {num1+num2}")
