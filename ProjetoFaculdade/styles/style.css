@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+body {
+    background-color: #2c1c4b;
+}
+
+.cabecalho {
+    background-color: #392666;
+    display: flex;
+    flex-direction: row;
+
+    .imagem-cabecalho {
+        width: 50px;
+        margin: 5px;
+    }
+
+    .lootsy-cabecalho {
+        font-weight: bolder;
+        font-size: large;
+        padding: 7px;
+        margin-top: 10px;
+    }
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    background-color: #392666;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 2px 10px 10px 10px rgba(0, 0, 0, 0.493);
+
+    .lootsy-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        img {
+            width: 100px;
+            margin-top: 5px;
+        }
+
+        h1 {
+
+            font-size: 55px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+    }
+
+    h3 {
+        text-align: center;
+        padding: 6%;
+        font-size: larger;
+    }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+
+        .label-email {
+            margin-bottom: 10px;
+        }
+
+        .label-senha {
+            margin: 10px 0px;
+        }
+
+        #email {
+            background-color: #2b1b48;
+            border: 1px solid #ffffff54;
+            border-radius: 5px;
+            height: 35px;
+            font-size: 16px;
+        }
+
+        #senha {
+            background-color: #2b1b48;
+            border: 1px solid #ffffff54;
+            border-radius: 5px;
+            height: 35px;
+            font-size: 16px;
+        }
+    }
+
+    .button {
+
+        margin: 5px 15px 35px 16px;
+
+        #botao {
+            background-color: #cf74cf;
+            width: 100%;
+            padding: 10px;
+            font-size: large;
+            font-weight: bolder;
+            border: none;
+            border-radius: 5px;
+
+        }
+    }
+
+    .cadastro {
+        text-decoration: none;
+        color: #cf74cf;
+        
+    }
+
+    .cadastro:hover{
+        font-size: 12px;
+        text-decoration-line: underline;
+    }
+
+    p {
+        text-align: center;
+        font-size: x-small;
+    }
+
+}
