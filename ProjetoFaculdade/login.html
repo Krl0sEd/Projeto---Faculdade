@@ -4,36 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+
+    <!---  CSS  -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="images/imagem.png" type="image/x-icon">
+
+
+    <!---  JS boostrap e Jquerry  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
+
 <body>
     <header class="cabecalho">
-        <img src="images/imagem.png" alt="imagem-principal" class="imagem-cabecalho">
+        <img src="images/imagem.png" alt="Logo Lootsy" class="imagem-cabecalho"/>
         <p class="lootsy-cabecalho">Lootsy</p>
     </header>
+    
+
+    <main>
     <section>
         <div class="login">
-            <div class="lootsy-body">
-                <img src="images/imagem.png" alt="imagem-principal">
+            <div class="lootsy-body text-center">
+                <img src="images/imagem.png" alt="ícone da plataforma Lootsy"/>
                 <h1>Lootsy</h1>
             </div>
-            <h3>LOGIN</h3>
+
+
+            <h3 class="text-center">LOGIN</h3>
+
             <div class="formulario">
-                <label for="" class="label-email">E-MAIL</label>
+                <label for="email" class="label-email">E-MAIL</label>
                 <input type="email" name="email" id="email" required>
-                <label for="" class="label-senha">SENHA</label>
+                <label for="senha" class="label-senha">SENHA</label>
                 <input type="password" name="senha" id="senha" required>
             </div>
             <div class="button">
                 <button id="botao">ENTRAR</button>
             </div>
-            <p>NOVO POR AQUI? <a href="#" class="cadastro">CADASTRE-SE</a></p>
+            <p>NOVO POR AQUI? <a href="index.html" class="cadastro">CADASTRE-SE</a></p>
         </div>
     </section>
+    </main>]
+
+    <!-- JS -->
     <script src="js/cadastro.js"></script>
 </body>
 </html>
