@@ -44,3 +44,15 @@ O objetivo do projeto é desenvolver a interface (front-end) de um site para a e
 git clone https://github.com/Krl0sEd/Projeto---Faculdade.git
 
 2. Procure pela pasta onde foi clonado o projeto e abra o arquivo html
+
+📝 License
+Esse projeto está sob licenciado pela licença MIT.
+Veja o arquivo de "LICENSE" para mais informações.
+
+
+👩‍💻 Colaborador principal
+
+Carlos Eduardo de Oliveira Bucazio
+Estudante de - Desenvolvimento Full - Stack, Analista de Sistemas & Redes.
+📧 cbucazio@gmail.com
+🌐 GitHub
