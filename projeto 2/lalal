@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <footer>
+        <h1>Lootsy</h1>
+        <h2>Av. Paris, 84 · (21) 3882-9797</h2>
+        <h3>Institucional</h3>
+        <h4>Comércio eletrônico de games.
+            Estamos há 10 anos no mercado 
+            com o objetivo de ser a melhor loja online de games. 
+            Aqui nossos games são bem tratados e você recebe o que está vendo, 
+            Todos nossos produtos possuem fotos reais e sem edição. 
+            Enviamos para todo o país, através dos serviços de entrega dos Correios e da transportadora R3 Express, tudo bem embalado e com seguro. 
+            Estamos em Rio de Janeiro/RJ e temos loja física no bairro de Bonsucesso e Magé.
+            Visite-nos, têm muita coisa boa.
+            Saudações Gamers!</h4>
+        <h5>Lootsy - CNPJ: 22.222.222/0001-22 © Todos os direitos reservados. 2025© Lootsy ® é marca registrada de Lootsy | Todos os direitos reservados.
+             Todas as fotos expostas na Lootsy.com.br são meramente ilustrativas e de nossa propriedade, estando protegidas por Lei Federal de Direito Autoral.</h5>
+    </footer>
+</body>
+</html>
