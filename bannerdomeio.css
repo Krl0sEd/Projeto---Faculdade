@@ -1,0 +1,68 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Montserrat', sans-serif;
+ }
+
+.loot-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #69539D;
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  position: relative;
+  overflow: visible;
+  max-width: 1300px;
+  margin: 40px;
+}
+
+ .textos {
+     max-width: 70%;
+     margin-left: 10%;
+ }
+
+ .titulo {
+     font-size: 2rem;
+     font-weight: bold;
+     margin-bottom: 1rem;
+ }
+
+ .subtitulo {
+     font-size: 1rem;
+     margin-bottom: 1.5rem;
+ }
+
+.imagem-wrapper img {
+  position: absolute;
+  right: 130px;
+  bottom: -10px;
+  width: 26%;
+  
+}
+
+ .btnbanner {
+     background-color: #CF74CF;
+     color: white;
+     padding: 8px 12px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     margin-top: 10px;
+     font-size: 18px;
+ }
+
+ .btnbanner:hover {
+     background-color: #b46fb4;
+ }
+
+ .compra-garantida {
+     background: #fff;
+     padding: 1rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     border-top: 1px solid #eee;
+ }
