@@ -15,6 +15,7 @@ body {
 }
 
 .lootsy-cabecalho {
+  color: white;
   font-weight: bold;
   font-size: 20px;
   padding: 7px;
@@ -121,9 +122,19 @@ section {
 
 .login_mensagem {
   color: white;
-  font-size: 12px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.login_mensagem a.login {
+  color: #cf74cf;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login_mensagem a.login:hover {
+  text-decoration: underline;
 }
 
 /* Mensagem de sucesso */
