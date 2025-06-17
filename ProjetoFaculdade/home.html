@@ -16,10 +16,13 @@
       <input type="text" placeholder="Buscar jogos..." />
    </div>
 
+  <!--- Botões de Login, Modo Noturno e Carrinho --->
    <div class="header-buttons">
      <div class="login-button" id="botão de login">
       <img src="catalogo_jogos/images/boneco-perfil.png" alt="Login" class="login-icon">
-      <div class="login-text">LOGIN<br>CADASTRE-SE</div>
+      <div class="login-text">
+        <a href="login.html" class="login-link">LOGIN</a><br>
+        <a href="cadastro.html" class="cadastro-link">CADASTRE-SE</a>
      </div>
 
      <div class="darkmode-button">
@@ -146,10 +149,5 @@
     </div>
   </footer>
   <script src = "js/home.js"></script>
-  <script>
-  document.getElementById("botão de login").addEventListener("click", () => {
-    window.location.href = "login.html";
-  });
-  </script>
 </body>
 </html>
