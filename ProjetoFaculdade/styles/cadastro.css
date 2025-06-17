@@ -1,5 +1,5 @@
 body {
-  background-color: #2c1c4b;
+  background-color: #2c1c4b; 
 }
 
 .cabecalho {
@@ -29,6 +29,7 @@ section {
   align-items: center;
 }
 
+
 /* Card de cadastro */
 .cadastro {
   background-color: #392666;
@@ -52,10 +53,18 @@ section {
 }
 
 .lootsy-body h1 {
-  font-size: 45px;
-  margin: 0;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
 }
 
+/* Texto de instrução */
+.parametros {
+  color: white;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: left;
+}
 /* Formulário em grid */
 .formulario {
   display: grid;
@@ -108,4 +117,45 @@ section {
 
 #botao:hover {
   background-color: #b45ab4;
+}
+
+.login_mensagem {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Mensagem de sucesso */
+.mensagem-sucesso {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+/* Mensagem de erro */
+.mensagem-erro {
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .formulario input {
+    width: 100%;
+  }
+
+  #botao {
+    width: 100%;
+  }
 }
