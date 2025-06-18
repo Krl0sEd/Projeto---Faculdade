@@ -102,6 +102,7 @@ section {
 .button {
   grid-column: span 2;
   margin-top: 20px;
+  color: black;
 }
 
 #botao {
@@ -204,6 +205,16 @@ body.dark {
 
   #botao {
     width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .cadastro {
+    padding: 1rem;
+  }
+
+  .lootsy-body img {
+    width: 80px;
   }
 }
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro - Lootsy</title>
-    <meta name="description" content="Cadastro de usuário na plataforma Lootsy, onde você pode criar sua conta na nossa plataforma!.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro - Lootsy</title>
+  <meta name="description" content="Cadastro de usuário na plataforma Lootsy, onde você pode criar sua conta na nossa plataforma!.">
 
   <!--- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
@@ -27,14 +27,14 @@
     <img src="assets/images/imagem_da_logo.png" alt="Logo Lootsy" class="imagem-cabecalho">
     <p class="lootsy-cabecalho">Lootsy</p>
 
+  <!--- Botão de Dark Mode -->
     <div class="darkmode-button">
   <img src="catalogo_jogos/images/modo-noturno.png" alt="dark-mode" class="darkmode-icon">
 </div>
-
   </header>
 
   <!--- Início do corpo principal -->
-  <main>
+  <main class="container-fluid">
   <section>
     <div class="cadastro">
       <div class="lootsy-body text-center">
@@ -46,46 +46,46 @@
       <form class="formulario" id="formCadastro">
         <div class="form-group">
           <label for="nome" class="parametros">Nome Completo</label>
-          <input type="text" id="nome" name="nome" autocomplete="name" required>
+          <input type="text" id="nome" name="nome" class="form-control" autocomplete="name" required>
         </div>
 
         <div class="form-group">
           <label for="sexo" class="parametros">Sexo</label>
-          <input type="text" id="sexo" name="sexo" autocomplete="sex" required>
+          <input type="text" id="sexo" name="sexo" class="form-control" autocomplete="sex" required>
         </div>
 
         <div class="form-group">
           <label for="data" class="parametros">Data de Nascimento</label>
-          <input type="date" id="data" name="data" autocomplete="bday" required>
+          <input type="date" id="data" name="data" class="form-control" autocomplete="bday" required>
         </div>
 
         <div class="form-group">
           <label for="mae" class="parametros">Nome Materno</label>
-          <input type="text" id="mae" required>
+          <input type="text" id="mae" class="form-control" required>
         </div>
 
         <div class="form-group">
           <label for="email" class="parametros">E-mail</label>
-          <input type="email" id="email" autocomplete="email" required>
+          <input type="email" id="email" class="form-control" autocomplete="email" required>
         </div>
 
         <div class="form-group">
           <label for="telefone" class="parametros">Telefone Celular</label>
-          <input type="tel" id="telefone" autocomplete="tel" required>
+          <input type="tel" id="telefone" class="form-control" autocomplete="tel" required>
         </div>
 
         <div class="form-group">
           <label for="cpf" class="parametros">CPF</label>
-          <input type="text" id="cpf" required>
+          <input type="text" id="cpf" class="form-control" required>
         </div>
 
         <div class="form-group">
           <label for="endereco" class="parametros">Endereço Completo</label>
-          <input type="text" id="endereco" autocomplete= "street-address" required>
+          <input type="text" id="endereco" class="form-control" autocomplete= "street-address" required>
         </div>
 
         <div class="button">
-          <button type="submit" id="botao">CADASTRAR</button>
+          <button type="submit" id="botao" class="btn btn-primary w-100">CADASTRAR</button>
         </div>
         <p class="login_mensagem">JÁ POSSUI UMA CONTA? <a href="login.html" class="login">FAÇA SEU LOGIN</a></p>
       </form>
