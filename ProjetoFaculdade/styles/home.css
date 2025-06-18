@@ -73,7 +73,6 @@ header img {
   line-height: 1.2;
 }
 
-
 .darkmode-button,
 .cart-button {
   display: flex;
@@ -329,4 +328,23 @@ footer a {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+header.dark,
+footer.dark,
+.navbar.dark,
+.loot-banner.dark,
+.compra-garantida.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.jogo.dark {
+  background-color: #2b1b48;
+  color: white;
 }

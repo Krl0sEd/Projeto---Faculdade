@@ -21,13 +21,16 @@
 
 <!--- Início do corpo da página -->
 <body>
-  <!--- JS -->
-  <script src="scripts/cadastro.js"></script>
   
   <!--- Cabeçalho da página -->
   <header class="cabecalho">
     <img src="assets/images/imagem_da_logo.png" alt="Logo Lootsy" class="imagem-cabecalho">
     <p class="lootsy-cabecalho">Lootsy</p>
+
+    <div class="darkmode-button">
+  <img src="catalogo_jogos/images/modo-noturno.png" alt="dark-mode" class="darkmode-icon">
+</div>
+
   </header>
 
   <!--- Início do corpo principal -->
@@ -40,20 +43,20 @@
       </div>
 
       <!--- Formulário de cadastro -->
-      <form class="formulario">
+      <form class="formulario" id="formCadastro">
         <div class="form-group">
           <label for="nome" class="parametros">Nome Completo</label>
-          <input type="text" id="nome" name="nome" autocomplete="nome" required>
+          <input type="text" id="nome" name="nome" autocomplete="name" required>
         </div>
 
         <div class="form-group">
           <label for="sexo" class="parametros">Sexo</label>
-          <input type="text" id="sexo" name="sexo" autocomplete="sexo" required>
+          <input type="text" id="sexo" name="sexo" autocomplete="sex" required>
         </div>
 
         <div class="form-group">
           <label for="data" class="parametros">Data de Nascimento</label>
-          <input type="date" id="data" name="data" autocomplete="data" required>
+          <input type="date" id="data" name="data" autocomplete="bday" required>
         </div>
 
         <div class="form-group">
@@ -63,12 +66,12 @@
 
         <div class="form-group">
           <label for="email" class="parametros">E-mail</label>
-          <input type="email" id="email" required>
+          <input type="email" id="email" autocomplete="email" required>
         </div>
 
         <div class="form-group">
           <label for="telefone" class="parametros">Telefone Celular</label>
-          <input type="tel" id="telefone" required>
+          <input type="tel" id="telefone" autocomplete="tel" required>
         </div>
 
         <div class="form-group">
@@ -78,7 +81,7 @@
 
         <div class="form-group">
           <label for="endereco" class="parametros">Endereço Completo</label>
-          <input type="text" id="endereco" required>
+          <input type="text" id="endereco" autocomplete= "street-address" required>
         </div>
 
         <div class="button">
@@ -88,8 +91,12 @@
       </form>
     </div>
   </section>
-
   </main>
+
+  <!--- JS -->
+  <script src="scripts/cadastro.js"></script>
+  
 </body>
 </html>
+
 <!-- Final do código -->
