@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lootsy - Jogos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="todososjogos.css"/>
+  <link rel="stylesheet" href="footer.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">🎮 Lootsy</div>
+      <input type="text" placeholder="Buscar jogos..." class="search-bar" />
+      <div class="user-options">
+        <span>👤 Olá, usuário!</span>
+        <span>🛒 Carrinho</span>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Jogos</a></li>
+        <li><a href="#">Promoções</a></li>
+        <li><a href="#">Sobre Nós</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner"></section>
+
+  <main class="main-content">
+    <div class="title-section">
+      <h2>Todos os jogos</h2>
+    </div>
+
+    <div class="games-grid" id="gamesContainer"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="institucional">
+        <h2>Institucional</h2>
+        <p>Comércio eletrônico de games.<br>
+          Estamos há 10 anos no mercado
+          com o objetivo de ser a melhor loja online de games. <br>
+          Enviamos para todo o país, através dos serviços de entrega dos Correios, tudo bem embalado e com segurança.</p>
+        <p>Estamos em Rio de Janeiro/RJ e temos loja física no bairro de Bonsucesso e Magé.<br>
+          Visite-nos, tem muita coisa boa.<br>
+          Saudações Gamers!</p>
+      </div>
+
+      <div class="contato-social">
+        <div class="logo">
+          <img src="assets/images/logo+nome.png" alt="Logo Lootsy">
+          <p>AV. PARIS, 84 · (21) 3882-9797</p>
+        </div>
+        <div class="social-icons">
+          <img src="assets/images/redes.png" alt="Redes">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="selos">
+        <h3>Selos de Segurança:</h3>
+        <img src="assets/images/google-secure.png" alt="Google Site Seguro">
+        <img src="assets/images/ssl-secure.png" alt="SSL Encryption">
+      </div>
+
+      <div class="envio">
+        <h3>Formas de Envio:</h3>
+        <img src="assets/images/envios_correios.webp" alt="Correios SEDEX e PAC">
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>Lootsy - CNPJ: 22.222.222/0001-22 © Todos os direitos reservados. 2025© Lootsy ® é marca registrada de Lootsy | Todos os direitos reservados.</p>
+      <p>Todas as fotos expostas na Lootsy.com.br são meramente ilustrativas e de nossa propriedade, estando protegidas por Lei Federal de Direito Autoral.</p>
+    </div>
+  </footer>
+
+  <script>
+    const games = [
+      { title: "The Last of Us Part II", img: "assets/images/thelast.png", link: "catalogo_jogos/jogo-last-of-us/catalogo.html" },
+      { title: "Red Dead Redemption II", img: "assets/images/reddead.png", link: "catalogo_jogos/jogo-red-dead/redDead.html" },
+      { title: "The Legend of Zelda: Echoes of Wisdom", img: "assets/images/zelda.jpg", link: "catalogo_jogos/jogo-zelda/zelda.html" },
+      { title: "Fable Anniversary Edition", img: "assets/images/fable.webp", link: "catalogo_jogos/jogo-fable/fable.html" },
+      { title: "It Takes Two", img: "assets/images/ittakes.jpg", link: null },
+      { title: "Detroit: Become Human", img: "assets/images/detroit.webp", link: null },
+      { title: "Horizon Zero Dawn", img: "assets/images/horizon.webp", link: null },
+      { title: "Until Dawn", img: "assets/images/untildawn.webp", link: null },
+      { title: "Infamous: Second Son", img: "assets/images/infamous.jpg", link: null },
+      { title: "The Quarry", img: "assets/images/thequarry.jpg", link: null },
+      { title: "Watch Dogs", img: "assets/images/watchdogs.jpg", link: null },
+      { title: "Far Cry 3", img: "assets/images/farcry.jpg", link: null }
+    ];
+
+    const container = document.getElementById("gamesContainer");
+    games.forEach(game => {
+      const card = document.createElement("div");
+      card.className = "game-card";
+       let buttonHTML = "";
+  if (game.link) {
+    buttonHTML = `<a href="${game.link}" class="btn">Conferir</a>`;
+  } else {
+    buttonHTML = `<span class="btn esgotado">Esgotado</span>`;
+  }
+      card.innerHTML = `
+        <img src="${game.img}" alt="${game.title}">
+        <h3>${game.title}</h3>
+        ${buttonHTML}
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>

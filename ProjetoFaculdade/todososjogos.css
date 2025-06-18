@@ -1,0 +1,146 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #f4f4f8;
+      color: #333;
+    }
+
+    .header {
+      background-color: #3c1977;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .search-bar {
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      width: 40%;
+    }
+
+    .user-options span {
+      margin-left: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      background-color: #452382;
+      padding: 10px;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .banner {
+      height: 100px;
+      background-color: #4d2a91;
+      margin-bottom: 20px;
+    }
+
+    .main-content {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .title-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      margin-left: 80px;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 50px;
+      margin: 80px;
+    }
+
+    .game-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .game-card h3 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .game-card .btn {
+      background-color: #c077d4;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .game-card .btn:hover {
+      background-color: #a35fc4;
+    }
+
+    .game-card .esgotado {
+         background-color: #ccc;
+         cursor: default;
+        pointer-events: none;
+    }
+
+
+    @media (max-width: 768px) {
+      .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .search-bar {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .title-section {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
