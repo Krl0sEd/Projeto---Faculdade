@@ -70,14 +70,17 @@ document.getElementById("formCadastro").addEventListener("submit", function (e) 
 
   // Dark mode
   document.addEventListener("DOMContentLoaded", () => {
-  const darkButton = document.querySelector(".darkmode-icon");
-    if (darkButton) {
+  const darkButton = document.querySelector(".darkmode-button");
+
+  if (darkButton) {
     darkButton.addEventListener("click", () => {
       document.body.classList.toggle("dark");
-        const cadastro = document.querySelector(".cadastro");
-          if (cadastro) cadastro.classList.toggle("dark");
-            const cabecalho = document.querySelector(".cabecalho");
-              if (cabecalho) cabecalho.classList.toggle("dark");
+
+      const cabecalho = document.querySelector(".cabecalho");
+      const cadastro = document.querySelector(".cadastro");
+
+      if (cabecalho) cabecalho.classList.toggle("dark");
+      if (cadastro) cadastro.classList.toggle("dark");
     });
   }
 });

@@ -73,6 +73,7 @@ header img {
   line-height: 1.2;
 }
 
+/* Botão de Dark Mode */
 .darkmode-button,
 .cart-button {
   display: flex;
@@ -96,7 +97,6 @@ header img {
   font-weight: bold;
   line-height: 1.2;
 }
-
 
 .navbar {
   background-color: #2B1B48;
@@ -190,8 +190,6 @@ header img {
 .btn:hover {
   background-color: #a263c0;
 }
-
-
 
 .loot-banner {
   background-color: #69539D;
@@ -330,6 +328,7 @@ footer a {
   margin-top: 1rem;
 }
 
+/*Dark Mode */
 body.dark {
   background-color: #121212;
   color: white;

@@ -162,6 +162,13 @@ section {
   top: 20px;
   right: 30px;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  text-align: center;
 }
 
 .darkmode-icon {
@@ -171,19 +178,18 @@ section {
 }
 
 /* Dark Mode */
-
 body.dark {
-  background-color: #121212;
-  color: white;
+  background-color: #121212 !important;
+  color: white !important;
 }
 
 .cadastro.dark {
-  background-color: #1e1e1e;
-  color: white;
+  background-color: #1e1e1e !important;
+  color: white !important;
 }
 
 .cabecalho.dark {
-  background-color: #1a1a1a;
+  background-color: #1a1a1a !important;
 }
 
 /* Responsabilidade */
