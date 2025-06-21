@@ -150,6 +150,7 @@ if (endereco.length < 10 || endereco.length > 100) {
 
     // Salva de volta
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    localStorage.setItem("ultimoLogin", login);
 
     mostrarSucesso("Cadastro realizado com sucesso! Redirecionando...");
     setTimeout(() => {

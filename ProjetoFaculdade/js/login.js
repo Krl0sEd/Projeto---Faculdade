@@ -16,6 +16,17 @@ document.querySelector("#botao").addEventListener("click", function(e) {
   const usuarioValido = usuarios.find(user => user.email === emailInput && user.senha === senhaInput);
 
   if (usuarioValido) {
+    // Aqui salva o login (não o nome completo) e a senha
+    localStorage.setItem("dadosCadastro", JSON.stringify({
+      login: usuarioValido.login || emailInput,
+      email: usuarioValido.email,
+      nome: usuarioValido.nome || "",
+      dataNascimento: usuarioValido.dataNascimento || "",
+      senha: usuarioValido.senha // adiciona senha para mostrar no menu
+    }));
+
+    localStorage.setItem("ultimoLogin", usuarioValido.login || emailInput);
+
     mostrarMensagem("Login realizado com sucesso! Redirecionando...", "sucesso");
     setTimeout(() => {
       window.location.href = "home.html";

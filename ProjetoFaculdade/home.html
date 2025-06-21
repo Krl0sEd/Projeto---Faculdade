@@ -17,11 +17,24 @@
       <input type="text" placeholder="Buscar jogos..." />
    </div>
 
+   <div class="login-area">
+  <a href="login.html" class="login-link">
+    <img src="assets/images/login-icone.png" alt="Login" class="login-icon" />
+    <div class="login-text">LOGIN</div>
+  </a>
+
+  <a href="cadastro.html" class="cadastro-link">
+    <div class="login-text">CADASTRE-SE</div>
+  </a>
+</div>
+
    <div class="header-buttons">
-     <a href="tela-login/login.html" class="login-button">
-      <img src="assets/images/login-icone.png" alt="Login" class="login-icon" />
-      <div class="login-text">LOGIN<br>CADASTRE-SE</div>
-     </a>
+     <div id="usuario" style="color: white; font-weight: 600; padding: 10px; cursor: pointer; position: relative;">
+  <!-- Conteúdo dinâmico será colocado pelo JS -->
+  <div id="usuario-menu" style="display: none; position: absolute; top: 100%; right: 0; background: #333; color: #fff; padding: 10px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); z-index: 1000;">
+    <!-- Menu dinâmico -->
+  </div>
+</div>
      
      <div class="darkmode-button">
       <img src="assets/images/icone-darkmode.png" alt="dark-mode" class="darkmode-icon">
@@ -173,5 +186,6 @@
       <p>Todas as fotos expostas na Lootsy.com.br são meramente ilustrativas e de nossa propriedade, estando protegidas por Lei Federal de Direito Autoral.</p>
     </div>
   </footer>
+  <script src="js/home.js"></script>
 </body>
 </html> 

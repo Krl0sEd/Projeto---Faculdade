@@ -32,6 +32,12 @@ html, body {
         margin-top: 10px;
     }
 
+    .lootsy-cabecalho a {
+  color: inherit;          /* herda a cor do pai */
+  text-decoration: none;   /* remove sublinhado padrão */
+  cursor: pointer;
+}
+
 /* Centralização da seção */
 section {
     height: 100vh;
