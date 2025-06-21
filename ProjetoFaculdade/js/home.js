@@ -1,3 +1,4 @@
+//Dark Mode
 document.addEventListener("DOMContentLoaded", () => {
   const darkButton = document.querySelector(".darkmode-button");
 
@@ -15,3 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+//LocalStorage da conta do usuário
+const dados = JSON.parse(localStorage.getItem("dadosCadastro"));
+console.log(dados);

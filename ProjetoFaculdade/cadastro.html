@@ -27,11 +27,19 @@
     <img src="assets/images/imagem_da_logo.png" alt="Logo Lootsy" class="imagem-cabecalho">
     <p class="lootsy-cabecalho">Lootsy</p>
 
-  <!--- Botão de Dark Mode -->
-    <div class="darkmode-button">
-  <img src="catalogo_jogos/images/modo-noturno.png" alt="dark-mode" class="darkmode-icon">
-</div>
-  </header>
+  <!--- Botões de configurações -->
+    <div class="botoes_de_configuracoes">
+    <div class="darkmode-button" id="darkmodeToggle" title="Modo Escuro">
+    <div id="darkmode-icon">🌙</div>
+    <span>Dark Mode</span>
+  </div>
+
+  <div class="botoes_da_fonte">
+    <button id="aumentarFonte" title="Aumentar Fonte">🔎+</button>
+    <button id="diminuirFonte" title="Diminuir Fonte">🔎-</button>
+  </div>
+    </div>
+      </header>
 
   <!--- Início do corpo principal -->
   <main class="container-fluid">
@@ -46,17 +54,22 @@
       <form class="formulario" id="formCadastro">
         <div class="form-group">
           <label for="nome" class="parametros">Nome Completo</label>
-          <input type="text" id="nome" name="nome" class="form-control" autocomplete="name" required>
+          <input type="text" id="nome" name="nome" class="form-control" minlength="15" maxlength="60"  autocomplete="name" required>
         </div>
 
         <div class="form-group">
           <label for="sexo" class="parametros">Sexo</label>
-          <input type="text" id="sexo" name="sexo" class="form-control" autocomplete="sex" required>
-        </div>
+          <select id="sexo" name="sexo" class="form-control" required>
+          <option value="" disabled selected>Selecione</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+          <option value="Outro">Outro</option>
+          </select>
+            </div>
 
         <div class="form-group">
           <label for="data" class="parametros">Data de Nascimento</label>
-          <input type="date" id="data" name="data" class="form-control" autocomplete="bday" required>
+          <input type="date" id="data" name="data" class="form-control" autocomplete="bday" min="1900-01-01" max="2025-06-22" required>
         </div>
 
         <div class="form-group">
@@ -71,7 +84,14 @@
 
         <div class="form-group">
           <label for="telefone" class="parametros">Telefone Celular</label>
-          <input type="tel" id="telefone" class="form-control" autocomplete="tel" required>
+          <input type="tel" id="telefoneCelular" name="telefoneCelular" class="form-control" autocomplete="tel-local" placeholder="(55) XX XXXXXXXXX" required>
+          <small class="padraotelefone">Formato: (+55)XX-XXXXXXXX</small>
+        </div>
+
+        <div class="form-group">
+          <label for="telefoneFixo" class="parametros">Telefone Fixo</label>
+          <input type="tel" id="telefoneFixo" name="telefoneFixo" class="form-control" autocomplete="tel-national" placeholder="(+55)(55) XX XXXXXXXXX" required>
+          <small class="padraotelefone">Formato: (+55)XX-XXXXXXXX</small>
         </div>
 
         <div class="form-group">
@@ -84,10 +104,28 @@
           <input type="text" id="endereco" class="form-control" autocomplete= "street-address" required>
         </div>
 
+        <div class="form-group">
+          <label for="login" class="parametros">Login</label>
+          <input type="text" id="login" name="login" class="form-control" pattern="[A-Za-z]{6}" maxlength="6" required>
+          <small class="padraologin">Exatamente 6 caracteres alfabéticos.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="senha" class="parametros">Senha</label>
+          <input type="password" id="senha" name="senha" class="form-control" pattern="[A-Za-z]{8}" maxlength="8" required>
+          <small class="padraosenha">Exatamente 8 caracteres alfabéticos.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmarSenha" class="parametros">Confirmar Senha</label>
+          <input type="password" id="confirmarSenha" name="confirmarSenha" class="form-control" pattern="[A-Za-z]{8}" maxlength="8" required>
+        </div>
+
         <div class="button">
           <button type="submit" id="botao" class="btn btn-primary w-100">CADASTRAR</button>
         </div>
         <p class="login_mensagem">JÁ POSSUI UMA CONTA? <a href="login.html" class="login">FAÇA SEU LOGIN</a></p>
+        <div id="mensagem"></div>
       </form>
     </div>
   </section>
