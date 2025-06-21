@@ -31,7 +31,7 @@ document.getElementById("formCadastro").addEventListener("submit", function (e) 
       !nome || !data_nascimento || !sexo || !mae ||
       !cpf || !telefoneFixo || !telefoneCelular || !endereco || !login || !senha || !confirmarSenha
     ) {
-      mostrarErroInline("Todos os campos são obrigatórios.");
+      mostrarErroInline("nome", "Todos os campos são obrigatórios.");
       return;
     }
 
@@ -128,30 +128,34 @@ if (endereco.length < 10 || endereco.length > 100) {
       return;
     }
 
-    // Salva no localStorage
-    const dadosCadastro = {
-          nome: nome,
-          dataNascimento: data_nascimento,
-          sexo: sexo,
-          mae: mae,
-          email: email,
-          cpf: cpf,
-          telefoneFixo: telefoneFixo,
-          telefoneCelular: telefoneCelular,
-          endereco: endereco,
-          login: login,
-          senha: senha
-};
+    /// MULTI-USUÁRIOS: carrega lista ou cria nova
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-// Salva no localStorage (convertendo para string)
-localStorage.setItem("dadosCadastro", JSON.stringify(dadosCadastro));
+    if (usuarios.some(u => u.email === email)) {
+      mostrarErroInline("email", "Este e-mail já está cadastrado.");
+      return;
+    }
+
+    if (usuarios.some(u => u.cpf === cpf)) {
+      mostrarErroInline("cpf", "Este CPF já está cadastrado.");
+      return;
+    }
+
+    // Adiciona o novo usuário
+    usuarios.push({
+      nome, dataNascimento: data_nascimento, sexo, mae,
+      email, cpf, telefoneFixo, telefoneCelular, endereco,
+      login, senha
+    });
+
+    // Salva de volta
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
     mostrarSucesso("Cadastro realizado com sucesso! Redirecionando...");
-
-    // Redireciona após 2 segundos
     setTimeout(() => {
       window.location.href = "login.html";
     }, 2000);
-  });
+});
 
   // Função para mostrar erro
   function mostrarErro(texto) {
