@@ -56,3 +56,15 @@ function removeMensagem() {
   const mensagens = document.querySelectorAll("main section div div.mensagem-login");
   mensagens.forEach(msg => msg.remove());
 }
+
+// Pegando dados do localStorage
+const dadosCadastro = JSON.parse(localStorage.getItem("dadosCadastro"));
+
+if (dadosCadastro && emailInput === dadosCadastro.email && senhaInput === dadosCadastro.senha) {
+  mostrarMensagem("Login realizado com sucesso! Redirecionando...", "sucesso");
+  setTimeout(() => {
+    window.location.href = "home.html";
+  }, 2000);
+} else {
+  mostrarMensagem("Email ou senha incorretos.", "erro");
+}

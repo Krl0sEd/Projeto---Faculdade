@@ -23,55 +23,58 @@ document.getElementById("formCadastro").addEventListener("submit", function (e) 
     // Limpa mensagens anteriores
     mensagem.innerHTML = "";
 
+    // Limpa mensagens inline antigas
+    document.querySelectorAll(".erro-inline").forEach(el => el.remove());
+
     // Validações
     if (
       !nome || !data_nascimento || !sexo || !mae ||
       !cpf || !telefoneFixo || !telefoneCelular || !endereco || !login || !senha || !confirmarSenha
     ) {
-      mostrarErro("Todos os campos são obrigatórios.");
+      mostrarErroInline("Todos os campos são obrigatórios.");
       return;
     }
 
     // Validação de nome
     if (nome.length < 15 || nome.length > 60 || !/^[a-zA-ZÀ-ú\s]+$/.test(nome)) {
-      mostrarErro("O nome deve ter entre 15 e 60 caracteres alfabéticos.");
+      mostrarErroInline("nome", "O nome deve ter entre 15 e 60 caracteres alfabéticos.");
       return;
     }
 
     // Validação de data de nascimento
 
   if (dataNascimento < dataMinima || dataNascimento > hoje) {
-    mostrarErro("Por favor, informe uma data de nascimento válida.");
+    mostrarErroInline("data", "Por favor, informe uma data de nascimento válida.");
       return;
 }
 
 //Validação de sexo
   if (!opcoesValidas.includes(sexo)) {
-    mostrarErro("Por favor, selecione uma opção válida para o sexo.");
+    mostrarErroInline("sexo", "Por favor, selecione uma opção válida para o sexo.");
       return;
 }
 
 //Validação de nome da mãe
     if (mae.length < 5 || mae.length > 60 || !/^[a-zA-ZÀ-ú\s]+$/.test(mae)) {
-      mostrarErro("O nome materno deve ter entre 5 e 60 caracteres apenas com letras.");
+      mostrarErroInline("mae", "O nome materno deve ter entre 5 e 60 caracteres apenas com letras.");
         return;
 }
 
 //validação de email
   if (!emailRegex.test(email)) {
-    mostrarErro("Por favor, insira um e-mail válido.");
+    mostrarErroInline("email", "Por favor, insira um e-mail válido.");
       return;
 }
 
 //Validação de telefoneCelular
     if (!telefoneRegex.test(telefoneCelular)) {
-  mostrarErro("Telefone celular deve estar no formato (+55)XX-XXXXXXXX.");
+  mostrarErroInline("telefoneCelular", "Telefone celular deve estar no formato (+55)XX-XXXXXXXX.");
   return;
 }
 
 //Validação telefoneFixo
   if (!telefoneRegex.test(telefoneFixo)) {
-    mostrarErro("Telefone fixo deve estar no formato (+55)XX-XXXXXXXX.");
+    mostrarErroInline("telefoneFixo", "Telefone fixo deve estar no formato (+55)XX-XXXXXXXX.");
       return;
 }
 
@@ -101,32 +104,31 @@ function validarCPF(cpf) {
 }
 
 if (!validarCPF(cpf)) {
-  mostrarErro("CPF inválido.");
+  mostrarErroInline("cpf", "CPF inválido.");
   return;
 }
 
 // Validação de endereço
 if (endereco.length < 10 || endereco.length > 100) {
-  mostrarErro("O endereço deve ter entre 10 e 100 caracteres.");
+  mostrarErroInline("endereço", "O endereço deve ter entre 10 e 100 caracteres.");
   return;
 }
 
 // Validação de login
   if (!/^[a-zA-Z]{6}$/.test(login)) {
-    mostrarErro("O login deve conter de 1 a 6 letras, sem números ou símbolos.");
+    mostrarErroInline("login", "O login deve conter exatamente 6 letras, sem números ou símbolos.");
       return;
 }
     if (!/^[a-zA-Z]{8}$/.test(senha)) {
-      mostrarErro("A senha deve conter exatamente 8 letras.");
+      mostrarErroInline("senha", "A senha deve conter exatamente 8 letras.");
       return;
     }
     if (senha !== confirmarSenha) {
-      mostrarErro("As senhas não coincidem.");
+      mostrarErroInline("senha", "As senhas não coincidem.");
       return;
     }
 
     // Salva no localStorage
-    // Cria um objeto com os dados
     const dadosCadastro = {
           nome: nome,
           dataNascimento: data_nascimento,
@@ -199,7 +201,7 @@ localStorage.setItem("dadosCadastro", JSON.stringify(dadosCadastro));
 });
 
 // Tamanho da fonte (auementar ou diminuir)
-  let currentFontSize = 16;
+  let currentFontSize = 16; 
 
   const ajustarFonte = (novaTamanho) => {
     // Alvo: todos os elementos de texto no formulário
@@ -234,4 +236,17 @@ localStorage.setItem("dadosCadastro", JSON.stringify(dadosCadastro));
   dataInput.setAttribute("min", "1900-01-01");
 });
 
+// Função para mostrar erro inline (sobre qual label/input específico)
+function mostrarErroInline(campoId, texto) {
+  // Remove mensagens antigas
+  document.querySelectorAll(`#${campoId} ~ small.erro-inline`).forEach(el => el.remove());
 
+  // Cria nova mensagem
+  const small = document.createElement("small");
+  small.className = "erro-inline text-danger";
+  small.style.fontSize = "11px";
+  small.textContent = texto;
+
+  // Insere depois do input
+  document.getElementById(campoId).insertAdjacentElement("afterend", small);
+}

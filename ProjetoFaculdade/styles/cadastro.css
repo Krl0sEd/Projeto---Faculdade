@@ -1,5 +1,19 @@
+/* Padronização do trabalho inteiro + fontes */
 html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   background-color: #2c1c4b !important;
+}
+
+/* Fonte Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+.formulario label,
+.formulario input,
+.formulario select,
+.formulario small,
+.formulario button {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .cabecalho {
@@ -192,11 +206,12 @@ input:-webkit-autofill:active {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 #botao:hover {
   background-color: #b45ab4;
+  transform: scale(1.02);
 }
 
 .login_mensagem {
@@ -237,6 +252,8 @@ input:-webkit-autofill:active {
 
 /* Botão de Aumentar/Diminuir tamanho de fonte */
 .botoes_da_fonte{
+  font-size: 14px;
+  padding: 4px 8px;
   display: flex;
   z-index: 1000;
   flex-direction: row;
@@ -313,25 +330,66 @@ body.dark {
   @media (max-width: 768px) {
   .formulario {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .form-group {
   margin-bottom: 18px; 
 }
 
-  #botao {
-    width: 100%;
+.button {
+    grid-column: span 1;
   }
-}
 
-@media (max-width: 576px) {
   .cadastro {
-    padding: 1rem;
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .lootsy-body h1 {
+    font-size: 30px;
   }
 
   .lootsy-body img {
     width: 80px;
   }
+  
+}
+
+@media (max-width: 480px) {
+  .lootsy-body h1 {
+    font-size: 24px;
+  }
+
+  .botoes_da_fonte {
+    flex-direction: column;
+  }
+  
+  #botao {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #botao {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .botoes_de_configuracoes {
+    position: static;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .login_mensagem {
+    font-size: 12px;
+  }
+
 }
 
 /* fim do CSS da tela de cadastro */
