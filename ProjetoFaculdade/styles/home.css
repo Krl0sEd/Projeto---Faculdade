@@ -366,9 +366,9 @@ header img {
   color: #333;
 }
 
-
+/* Botão de conferir jogos */
 .btn {
-  background-color: #b67dd4;
+  background-color: #b67dd4 !important;
   color: white;
   padding: 8px 12px;
   border: none;
@@ -376,12 +376,14 @@ header img {
   cursor: pointer;
   font-size: 14px;
   margin-top: auto; 
+  text-decoration: none; /* Remove sublinhado do link */
+  display: inline-block; /* Faz o link se comportar como botão */
+
 }
 
 .btn:hover {
   background-color: #a263c0;
 }
-
 
 .loot-banner {
   display: flex;
@@ -579,6 +581,18 @@ header img {
 body.dark {
   background-color: #121212 !important;
   color: white !important;
+}
+
+body.dark .jogo p {
+  color: #f5a623; /* cor amarela para o preço dos jogos no Dark Mode */
+}
+
+body.dark header {
+  background-color: #1a112f; /* darkmode do header */
+}
+
+body.dark .navbar  {
+  background-color: #280e66; /* Dark mode da navbar */
 }
 
 .destaques.dark {
