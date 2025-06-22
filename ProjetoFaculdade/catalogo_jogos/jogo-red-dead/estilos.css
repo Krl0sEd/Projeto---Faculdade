@@ -242,18 +242,18 @@ header img {
         background-repeat: no-repeat;
         background-position: center;
         height: 100vh;
+        }
         
-        h2 {
+        .sinopse h2 {
             padding: 40px;
             font-size: 45px;
-            
+            text-shadow: 5px 5px 10px black;
         }
 
-        p{
+        .sinopse p{
             padding: 40px;
             font-size: 30px;
-            
+            text-shadow: 3px 3px 8px black;
         }
-    }
 }
 
