@@ -19,12 +19,14 @@ body {
   margin: 0;
 }
 
+/* Cabeçalho */
  header {
   background-color: #352262;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   color: white;
 }
 
@@ -34,7 +36,9 @@ header img {
 
 .search-bar {
   flex: 1;
+  max-width: 7000px; /* ou ajuste para o valor que quiser, ex: 300px */
   margin: 0 2rem;
+  position: relative; /* necessário se o botão da search estiver com position absolute */
 }
 
 .search-bar input {
@@ -54,9 +58,9 @@ header img {
 }
 
 .header-buttons {
-   display: flex;
+  display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .header-buttons img {
@@ -94,22 +98,35 @@ header img {
   line-height: 1.2;
 }
 
+/* Botões de configurações*/
+.botoes_de_configuracoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .darkmode-button, .cart-button {
-   display: flex;
+  z-index: 1000;
+  display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   cursor: pointer;
   text-align: center;
 }
 
+/* puxa para a esquerda em relação ao próximo elemento (cart-button) */
+.darkmode-button {
+  margin-right: 20px; 
+}
+
 .darkmode-icon {
-  width: 30px !important;
-  height: 50px !important;
+  width: 24px;
+  height: auto;
   margin-bottom: 4px;
-  object-fit: fill;
-  margin-right: 20px;
+  font-size: 24px;
+  line-height: 1;
 }
 
 .cart-text {
@@ -118,6 +135,34 @@ header img {
   line-height: 1.2;
 }
 
+/* Botão de Aumentar/Diminuir tamanho de fonte */
+.botoes_da_fonte{
+  font-size: 14px;
+  padding: 4px 8px;
+  display: flex;
+  z-index: 1000;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.botoes_da_fonte button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #cf74cf; /* opcional: mantém contorno roxo */
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+.botoes_da_fonte button:hover {
+  background-color: rgba(207, 116, 207, 0.2); /* leve roxinho translúcido */
+  transform: scale(1.05);
+}
+/* Navbar */
 .navbar {
   background-color: #2B1B48;
   padding: 2px 0;
@@ -175,7 +220,6 @@ header img {
 #usuario-menu {
   min-width: 150px;
 }
-
 
 .banner {
   width: 100%;
@@ -287,7 +331,6 @@ header img {
   transform: translateY(-8px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); 
 }
-
 
 .jogo img {
   width: 100%;
@@ -475,6 +518,17 @@ header img {
   margin-bottom: 10px;
 }
 
+.logo.h1 {
+  font-size: 28px;
+  color: white;
+  margin: 0;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .social-icons img {
   width: 350px;
   margin-top: 10px;
@@ -505,4 +559,35 @@ header img {
   text-align: center;
   font-size: 0.8em;
   color: #ccc;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212 !important;
+  color: white !important;
+}
+
+.destaques.dark {
+  background-color: #1e1e1e;
+}
+
+.jogo.dark {
+  background-color: #2a2a2a;
+  color: #eee;
+}
+
+.navbar.dark {
+  background-color: #222;
+}
+
+.footer.dark {
+  background-color: #111;
+}
+
+.loot-banner.dark {
+  background-color: #333;
+}
+
+.compra-garantida.dark {
+  background-color: #222;
 }

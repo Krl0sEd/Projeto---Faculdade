@@ -46,19 +46,100 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mostrarUsuario();
 
-  // Código do botão darkmode
+  // Dark mode com LocalStorage e DOM
   const darkButton = document.querySelector(".darkmode-button");
+  const emojiIcon = document.getElementById("darkmode-icon");
+  const cabecalho = document.querySelector(".cabecalho");
+  const cadastro = document.querySelector(".cadastro");
+
+  // Aplica tema salvo
+  const temaSalvo = localStorage.getItem("modo");
+  if (temaSalvo === "dark") {
+    document.body.classList.add("dark");
+    cabecalho?.classList.add("dark");
+    cadastro?.classList.add("dark");
+    emojiIcon.textContent = "🌙";
+    document.querySelectorAll('.destaques, .jogo, .footer').forEach(el => {
+      el.classList.add('dark');
+    });
+  } else {
+    emojiIcon.textContent = "☀️";
+  }
+
   if (darkButton) {
     darkButton.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      document.querySelector("header").classList.toggle("dark");
-      document.querySelector("footer").classList.toggle("dark");
-      document.querySelector(".navbar").classList.toggle("dark");
-      document.querySelector(".loot-banner").classList.toggle("dark");
-      document.querySelector(".compra-garantida").classList.toggle("dark");
-      document.querySelectorAll(".jogo").forEach((card) =>
-        card.classList.toggle("dark")
-      );
+      const modoEscuroAtivo = document.body.classList.toggle("dark");
+      cabecalho?.classList.toggle("dark");
+      cadastro?.classList.toggle("dark");
+
+      if (modoEscuroAtivo) {
+        emojiIcon.textContent = "🌙";
+        localStorage.setItem("modo", "dark");
+      } else {
+        emojiIcon.textContent = "☀️";
+        localStorage.setItem("modo", "light");
+      }
+
+      //Mudar fonte também no Dark Mode
+  document.querySelectorAll('.destaques, .jogo, .footer').forEach(el => {
+  el.classList.toggle('dark', modoEscuroAtivo);
+});
+
     });
   }
+  // Tamanho da fonte (auementar ou diminuir)
+  let currentFontSize = 16; 
+
+  const ajustarFonte = (novaTamanho) => {
+    // Vamos pegar os elementos de texto relevantes no home.html
+    const elementos = document.querySelectorAll(
+      '.destaques, .destaques *,' + // toda a seção de destaques e seus filhos
+      '.footer, .footer *,' +       // o rodapé e filhos
+      '.jogo, .jogo *,' +           // a seção de jogos e seus filhos
+      '.header, .header *,' +        // header e filhos
+      'nav, nav *,' +               // navbar e filhos
+      '.banner, .banner *,' +       // banner e filhos
+      '.loot-banner, .loot-banner *,' +  // banner extra
+      '.compra-garantida, .compra-garantida *,' + // seção de compra garantida
+      '.cabecalho, .cabecalho *,' + // o cabeçalho e filhos
+      '.cadastro, .cadastro *,' +   // a seção de cadastro e seus filhos
+      '.login-link, .login-link *,' + // a seção de login e seus filhos
+      '.cadastro-link, .cadastro-link *,' + // a seção de cadastro e seus filhos
+      '#usuario, #usuario *,' +     // o usuário e filhos
+      '#usuario-menu, #usuario-menu *,' + // o menu do usuário e filhos
+      '#logout-btn, #logout-btn *,' + // o botão de logout e filhos
+      'p, h1, h2, h3, span'
+    );
+
+    elementos.forEach(el => {
+      el.style.fontSize = novaTamanho + 'px';
+    });
+
+    currentFontSize = novaTamanho;
+
+     localStorage.setItem('tamanhoFonte', novaTamanho);
+  };
+
+// Recupera tamanho salvo ou usa padrão 16 (precisa vir antes do event listener e depois do current FontSize)
+let tamanhoSalvo = localStorage.getItem('tamanhoFonte');
+if (tamanhoSalvo) {
+  currentFontSize = parseInt(tamanhoSalvo, 10);
+  ajustarFonte(currentFontSize);
+} else {
+  currentFontSize = 16; // valor padrão caso não tenha salvo ainda
+  ajustarFonte(currentFontSize);
+}
+
+  document.getElementById('aumentarFonte').addEventListener('click', () => {
+    if (currentFontSize < 24) {
+      ajustarFonte(currentFontSize + 1);
+    }
+  });
+
+  document.getElementById('diminuirFonte').addEventListener('click', () => {
+    if (currentFontSize > 12) {
+      ajustarFonte(currentFontSize - 1);
+    }
+  });
 });
+// Fim do código

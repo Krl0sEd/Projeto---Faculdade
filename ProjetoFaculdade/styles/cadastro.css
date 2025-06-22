@@ -324,11 +324,10 @@ input.form-control.input-erro:focus {
 .botoes_da_fonte button:hover {
   background-color: rgba(207, 116, 207, 0.2); /* leve roxinho translúcido */
   transform: scale(1.05);
-
 }
 
-/* Botões de configurações*/
-.botoes_de_configuracoes {
+/* Botões de configurações */
+.botoes_de_configuracoes { 
   position: fixed;
   top: 20px;
   right: 30px;

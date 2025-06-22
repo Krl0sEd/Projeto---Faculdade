@@ -167,7 +167,7 @@ header img {
 }
 
     .bannersobrenos {
-      background: url('assets/images/122.jpg') center/cover no-repeat;
+      background: url('../assets/images/122.jpg') center/cover no-repeat;
       padding: 65px 20px;
       text-align: center;
       color: white;
