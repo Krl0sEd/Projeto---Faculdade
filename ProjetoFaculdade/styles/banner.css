@@ -1,0 +1,125 @@
+.banner {
+  width: 100vw;
+  height: 450px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.banner .img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  
+}
+
+.banner .slide {
+   display: flex;
+  transition: transform 1s ease;
+  width: 300%;
+}
+
+
+.banner button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(230, 10, 130, 0.822);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.banner button.prev,
+.banner button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(204, 10, 130, 0.822); /* transparente, mas não tão escuro */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  -webkit-user-select: none;  /* <-- Adicionado essa linha para poder ser suportado pelo Safari */
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.prev { left: 10px;}
+
+.next { right: 10px;}
+
+.banner button:hover {
+  background-color: rgba(204, 10, 130, 0.822);
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+}
+
+.slides {
+  display: flex;
+  width: 300vw;
+  height: 450px;
+  transition: transform 1s ease-in-out;
+  transform: translateX(0);
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  object-fit: cover;
+  width: 200vw;
+  height: 450px;
+  margin: 0;
+  padding: 0;
+
+}
+.slides img {
+  width: 100vw;
+  height: 450px;
+  max-height: 450px;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  
+}
+
+.slide.container {
+  overflow: hidden;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #CF74CF;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+.dots {
+  position: relative;
+  margin-top: 15px;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.dot.active {
+  background-color: black
+}
