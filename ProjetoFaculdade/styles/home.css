@@ -60,7 +60,7 @@ header img {
 .header-buttons {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
 }
 
 .header-buttons img {
@@ -98,11 +98,27 @@ header img {
   line-height: 1.2;
 }
 
+.login-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Botões de configurações*/
 .botoes_de_configuracoes {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.cart-button {
+  margin-left: 20px; /* separa o carrinho do grupo anterior */
 }
 
 .darkmode-button, .cart-button {
@@ -164,6 +180,8 @@ header img {
 }
 /* Navbar */
 .navbar {
+  overflow-x: auto;
+  white-space: nowrap;
   background-color: #2B1B48;
   padding: 2px 0;
   text-align: center;
@@ -182,13 +200,14 @@ header img {
 }
 
 .nav-links {
-  display: flex;
+  display: inline-flex;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 80px;
+  gap: 10px;
   list-style: none;
   margin: 0;
-  padding: 10px 0;
+  padding: 10px 20px;
 }
 
 .nav-links li a {
