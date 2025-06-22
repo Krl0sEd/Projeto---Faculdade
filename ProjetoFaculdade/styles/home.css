@@ -315,13 +315,13 @@ header img {
 .destaques h2 {
   font-size: 24px;
   margin-bottom: 30px;
-  margin-left: 20px; 
+  margin: 0 auto;
   text-align: left;
 }
 
 .destaques-container {
   display: flex;
-  gap: 80px;
+  gap: 5%;
   flex-wrap: wrap;
   justify-content: flex-start; 
   padding-left: 15%; 
@@ -604,4 +604,25 @@ body.dark {
 
 .compra-garantida.dark {
   background-color: #222;
+}
+
+/* Reponsividade */
+@media (max-width: 768px) {
+  .destaques-container {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    gap: 20px;
+  }
+
+  .loot-banner {
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .imagem-wrapper img {
+    position: static;
+    width: 80%;
+  }
 }
