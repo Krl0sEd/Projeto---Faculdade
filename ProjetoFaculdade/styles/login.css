@@ -3,12 +3,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     color: white;
 }
 
+/* Padronização body + Resetando o overflow-x para evitar rolagem horizontal */
 html, body {
   background-color: #2c1c4b !important;
+  overflow-x: hidden;
 }
 
 .cabecalho {

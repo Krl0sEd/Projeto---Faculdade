@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       'nav, nav *,' +               // navbar e filhos
       '.banner, .banner *,' +       // banner e filhos
       '.loot-banner, .loot-banner *,' +  // banner extra
+      'secao-hero-fundo, .secao-hero-fundo *' + // fundo da seção hero
       '.compra-garantida, .compra-garantida *,' + // seção de compra garantida
       '.cabecalho, .cabecalho *,' + // o cabeçalho e filhos
       '.cadastro, .cadastro *,' +   // a seção de cadastro e seus filhos
@@ -108,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
       '#usuario, #usuario *,' +     // o usuário e filhos
       '#usuario-menu, #usuario-menu *,' + // o menu do usuário e filhos
       '#logout-btn, #logout-btn *,' + // o botão de logout e filhos
-      'p, h1, h2, h3, span'
+      'p, h1, h2, h3, span' // // outros elementos de texto comuns
     );
 
     elementos.forEach(el => {

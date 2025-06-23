@@ -1,19 +1,14 @@
-/* Padronização do trabalho inteiro + fontes */
+/* Padronização do trabalho inteiro + fontes + Resetando o overflow-x para evitar rolagem horizontal*/ 
 html, body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   background-color: #2c1c4b !important;
+  overflow-x: hidden;
 }
 
-/* Fonte Montserrat */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-.formulario label,
-.formulario input,
-.formulario select,
-.formulario small,
-.formulario button {
-  font-family: 'Montserrat', sans-serif;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 .cabecalho {
@@ -45,10 +40,12 @@ html, body {
 
 /* Centralização */
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 
@@ -118,13 +115,6 @@ h1 a:hover {
   text-align: left;
 }
 
-.formulario select:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(207, 116, 207, 0.4);
-  background-color: #2b1b48 !important;
-  color: white !important;
-}
-
 .padraotelefone {
   color: rgb(211, 168, 168);
   font-size: 10px;
@@ -153,6 +143,7 @@ h1 a:hover {
   grid-template-columns: 1fr 1fr;
   gap: 20px 25px;
   margin-top: 30px;
+  padding: 0 10px;
 }
 
 /* Aparência dos labels e caixas de inputs */
@@ -176,7 +167,6 @@ h1 a:hover {
   color: #fff;
   border: 1px solid #888;
   border-radius: 5px;
-  padding: 5px 10px;
   font-size: 15px;
   width: 100%;
   box-sizing: border-box;
@@ -216,18 +206,25 @@ input:-webkit-autofill:active {
 #botao {
   background-color: #cf74cf;
   width: 100%;
-  padding: 10px;
   font-size: 16px;
   font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-}
+  transition: background-color 0.3s ease;
+  padding: 12px;
+  will-change: transform;
+  }
 
 #botao:hover {
   background-color: #b45ab4;
   transform: scale(1.02);
+}
+
+/* Melhoria de acessibilidade */
+#botao:focus-visible {
+  outline: 2px solid #cf74cf;
+  outline-offset: 2px;
 }
 
 .login_mensagem {
@@ -345,9 +342,13 @@ input.form-control.input-erro:focus {
   flex-direction: column;
   align-items: center;
   color: white;
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   cursor: pointer;
   text-align: center;
+}
+
+.darkmode-button span {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .darkmode-icon {
@@ -390,7 +391,7 @@ body.dark {
 
   .cadastro {
     padding: 20px;
-    max-width: 95%;
+    max-width: 100%;
   }
 
   .lootsy-body h1 {
@@ -405,36 +406,61 @@ body.dark {
 
 @media (max-width: 480px) {
   .lootsy-body h1 {
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .lootsy-body img {
+    width: 50px;
   }
 
   .botoes_da_fonte {
     flex-direction: column;
   }
-  
-  #botao {
-    font-size: 14px;
-    padding: 8px;
-  }
 
-  #botao {
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
+  .cadastro {
+    max-width: 95%;
+    padding: 15px;
+  }
 
   .cabecalho {
     flex-direction: column;
     align-items: flex-start;
+    padding: 8px 10px;
   }
 
   .botoes_de_configuracoes {
     position: static;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 15px;
+  }
+
+  .botoes_da_fonte {
+    gap: 8px;
+    margin-bottom: 15px;
   }
 
   .login_mensagem {
     font-size: 12px;
+  }
+
+  .formulario {
+    gap: 12px 15px;
+  }
+
+  .formulario label.parametros {
+    font-size: 13px;
+  }
+
+  .formulario input,
+  .formulario select {
+    font-size: 14px;
+  }
+
+  .lootsy-cabecalho {
+    font-size: 18px;
+    margin-top: 5px;
   }
 
 }

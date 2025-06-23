@@ -1,3 +1,8 @@
+/* Resetando o overflow-x para evitar rolagem horizontal */
+html, body {
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +13,9 @@
 body { 
  margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  background-color: #f0f0f0;  
   color: black;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .icone img {
@@ -36,7 +41,7 @@ header img {
 
 .search-bar {
   flex: 1;
-  max-width: 7000px; /* ou ajuste para o valor que quiser, ex: 300px */
+  max-width: 7000px; /* ou ajuste para o valor que eu quiser, ex: 300px */
   margin: 0 2rem;
   position: relative; /* necessário se o botão da search estiver com position absolute */
 }
@@ -60,7 +65,7 @@ header img {
 .header-buttons {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
 }
 
 .header-buttons img {
@@ -79,7 +84,7 @@ header img {
   flex-direction: column;
   align-items: center;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   text-align: center;
   font-size: 14px;
   cursor: pointer;
@@ -127,9 +132,13 @@ header img {
   flex-direction: column;
   align-items: center;
   color: white;
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   cursor: pointer;
   text-align: center;
+}
+
+.darkmode-button span {
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* puxa para a esquerda em relação ao próximo elemento (cart-button) */
@@ -182,9 +191,11 @@ header img {
 .navbar {
   overflow-x: auto;
   white-space: nowrap;
+  display: flex;
   background-color: #2B1B48;
   padding: 2px 0;
   text-align: center;
+  justify-content: center;
 }
 
 .navbar a {
@@ -204,7 +215,7 @@ header img {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 3rem; /* ou o valor que quisermos entre os itens */
   list-style: none;
   margin: 0;
   padding: 10px 20px;
@@ -215,7 +226,7 @@ header img {
   font-weight: bold;
   text-decoration: none;
   font-size: 18px;
-  margin: 0 120px;
+  margin: 0 225px;
 }
 
 .nav-links a {
@@ -246,6 +257,7 @@ header img {
   padding: 10px;
   cursor: pointer;
   position: relative;
+  margin-right: 16px;
 }
 
 #usuario-menu {
@@ -261,17 +273,19 @@ header img {
   z-index: 1000;
 }
 
-.banner {
+.banner,
+.carousel {
   width: 100%;
   overflow: hidden;
-  
+  position: relative;
 }
 
 .banner img {
   width: 100%;
-  height: 420px;
   object-fit: cover;
-  
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .banner button {
@@ -308,6 +322,7 @@ header img {
 
 .slide {
   width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
 }
@@ -326,6 +341,14 @@ header img {
   background-color: #333;
 }
 
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Destaques */
 .destaques {
   padding: 2rem;
   background-color: #f5f5f5;
@@ -340,10 +363,10 @@ header img {
 
 .destaques-container {
   display: flex;
-  gap: 5%;
+  gap: 60px;
   flex-wrap: wrap;
-  justify-content: flex-start; 
-  padding-left: 15%; 
+  justify-content: center; /* centraliza os itens */
+  padding: 0 20px; /* espaçamento nas laterais */
 }
 
 .jogo {
@@ -415,7 +438,14 @@ header img {
   position: relative;
   overflow: visible;
   max-width: 1300px;
-  margin: 80px;
+  width: 100%;
+  margin: 80px auto;
+}
+
+.secao-hero-fundo {
+  padding: 40px 0;
+  justify-content: center;
+  background-color: #e8e1f4; /* cor do fundo do banner hero */
 }
 
 .textos {
@@ -627,6 +657,10 @@ body.dark .navbar  {
   background-color: #222;
 }
 
+body.dark .secao-hero-fundo {
+  background-color: #181818 /* roxo escuro */
+}
+
 .footer.dark {
   background-color: #111;
 }
@@ -639,23 +673,223 @@ body.dark .navbar  {
   background-color: #222;
 }
 
-/* Reponsividade */
-@media (max-width: 768px) {
-  .destaques-container {
+/* --- Responsividade para telas menores que 768px (celulares/tablets) --- */
+@media (max-width: 768px) { 
+  /* NAVBAR */
+  .nav-links {
     flex-direction: column;
     align-items: center;
-    padding-left: 0;
-    gap: 20px;
+    gap: 16px;
+    padding: 10px 0;
   }
 
+  .nav-links li a {
+    margin: 0; /* Remove os 225px de margem lateral */
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  /* HEADER */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 0;
+  }
+
+  .header-buttons,
+  .botoes_de_configuracoes,
+  .login-area {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* BANNERS do Carousel */
+  .banner img {
+    height: auto;
+    object-fit: cover;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .imagem-wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+
+.prev,
+  .next {
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .dots {
+    bottom: 10px;
+  }
+
+  /* BANNER HERO */
   .loot-banner {
     flex-direction: column;
+    text-align: center;
     padding: 20px;
     margin: 20px;
   }
 
+  .textos {
+    max-width: 100%;
+    margin: 0;
+  }
+
   .imagem-wrapper img {
     position: static;
-    width: 80%;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto 0;
+  }
+
+  /* DESTAQUES */
+  .destaques-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    align-items: center;
+  }
+
+  /* COMPRA GARANTIDA */
+  .compra-garantida {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .compra-garantida .pagamentos {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .compra-garantida .icon img {
+    width: 80px;
+    height: auto;
+  }
+
+  /* FOOTER */
+  .footer-container,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .contato-social {
+    text-align: center;
+  }
+
+  .social-icons img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* CARDS DE JOGOS */
+  .jogo {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/* --- Estilos adicionais para telas MUITO pequenas (até 480px) --- */
+@media (max-width: 480px) {
+  /* Botão para abrir menu mobile (você precisa criar esse botão no HTML se quiser usá-lo) */
+  #menu-toggle {
+    display: block;
+    font-size: 26px;
+    margin: 10px auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 0;
+    background-color: #2B1B48;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Títulos e textos menores */
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .subtitulo {
+    font-size: 0.9rem;
+  }
+
+  /* Padding e espaço reduzido nos blocos principais */
+  .loot-banner,
+  .compra-garantida,
+  .footer,
+  .destaques {
+    padding: 15px;
+  }
+
+  /* Redimensionar imagens grandes */
+  .imagem-wrapper img,
+  .compra-garantida .icon img,
+  .social-icons img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  /* Cartões de jogos mais compactos */
+  .jogo {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px;
+    min-height: 300px;
+  }
+
+  .jogo h3 {
+    font-size: 14px;
+  }
+
+  .jogo p {
+    font-size: 20px;
+  }
+
+  /* Footer centralizado */
+  .footer-container,
+  .footer-bottom {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .contato-social {
+    text-align: center;
   }
 }

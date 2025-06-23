@@ -1,3 +1,8 @@
+/* Resetando o overflow-x para evitar rolagem horizontal */
+html, body {
+  overflow-x: hidden;
+}
+
 * {
       box-sizing: border-box;
       margin: 0;

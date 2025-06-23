@@ -1,4 +1,13 @@
+/* Resetando o overflow-x para evitar rolagem horizontal */
+html, body {
+  overflow-x: hidden;
+}
 
+/* Aplica Montserrat no footer e todos os seus filhos */
+footer, 
+footer * {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
 
 .footer {
   padding: 40px 60px;
