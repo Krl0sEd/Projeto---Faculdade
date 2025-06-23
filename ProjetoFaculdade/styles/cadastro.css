@@ -7,10 +7,12 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Resetando box-sizing para todos os elementos (ajuda para evitar que elemento ultrapasse tela */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
+/* Estilização do cabeçalho */
 .cabecalho {
   background-color: #392666;
   display: flex;
@@ -156,8 +158,6 @@ h1 a:hover {
   color: white;
   text-align: left;
 }
-
-
 
 /* Inputs com foco para deixar de ficar branco quando clicavel */
 .formulario input,

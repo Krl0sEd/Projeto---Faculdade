@@ -108,27 +108,41 @@ h1 a:hover {
             margin: 10px 0px;
         }
 
-        #email {
-            background-color: #2b1b48;
+        #email,
+        #senha {
+            background-color: #2b1b48 !important;
             border: 1px solid #ffffff54;
             border-radius: 5px;
             height: 35px;
             font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            color:white !important; 
         }
 
-        #senha {
-            background-color: #2b1b48;
-            border: 1px solid #ffffff54;
-            border-radius: 5px;
-            height: 35px;
-            font-size: 16px;
+        #email:focus,
+        #senha:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(207, 116, 207, 0.4);
+            background-color: #2b1b48 !important;
+            color: white !important;
+            border-color: #cf74cf;
+            box-shadow: 0 0 5px 2px rgba(207, 116, 207, 0.6);
         }
+
+        /* Força fundo e cor no autocomplete (Chrome) */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 1000px #2b1b48 inset !important;
+        -webkit-text-fill-color: white !important;
+        transition: background-color 5000s ease-in-out 0s;
+}
+
 
     /* Botão */
     .button {
-
         margin: 5px 15px 35px 16px;
-
         #botao {
             background-color: #cf74cf;
             width: 100%;
@@ -137,7 +151,6 @@ h1 a:hover {
             font-weight: bolder;
             border: none;
             border-radius: 5px;
-
         }
     }
     
@@ -157,3 +170,76 @@ h1 a:hover {
         text-align: center;
         font-size: x-small;
     }
+
+    /* Responsividade */
+    /* Tela menor que 768px (tablets e celulares maiores) */
+@media (max-width: 768px) {
+  section {
+    height: auto;  /* deixa o container adaptar a altura */
+    padding: 40px 20px; /* dá um espaçamento nas laterais */
+  }
+  
+  .login {
+    max-width: 100%;  /* ocupa toda a largura disponível */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 1px 5px 10px rgba(0,0,0,0.3);
+  }
+
+  .lootsy-body h1 {
+    font-size: 40px; /* reduz o título para caber melhor */
+  }
+
+  .login h3 {
+    font-size: 18px;
+  }
+
+  #email, #senha {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  .button #botao {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+/* Tela menor que 480px (celulares menores) */
+@media (max-width: 480px) {
+  section {
+    padding: 20px 10px;
+  }
+
+  .login {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+
+  .lootsy-body img {
+    width: 70px;
+  }
+
+  .lootsy-body h1 {
+    font-size: 30px;
+  }
+
+  .login h3 {
+    font-size: 16px;
+  }
+
+  #email, #senha {
+    font-size: 13px;
+    height: 35px;
+  }
+
+  .button #botao {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  p {
+    font-size: smaller;
+  }
+}

@@ -1,3 +1,4 @@
+// Script para a página de login
 document.querySelector("#botao").addEventListener("click", function(e) {
   e.preventDefault();
 

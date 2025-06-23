@@ -33,6 +33,7 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   color: white;
+  gap: 12px; /* adiciona espaçamento entre os blocos */
 }
 
 header img {
@@ -698,7 +699,7 @@ body.dark .secao-hero-fundo {
   /* HEADER */
   header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch; /* força largura total nos filhos */
     gap: 16px;
   }
 
@@ -710,10 +711,11 @@ body.dark .secao-hero-fundo {
   .header-buttons,
   .botoes_de_configuracoes,
   .login-area {
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
+    width: 100%; /* <- garante que eles usem o espaço da tela no mobile */
+    justify-content: center;
+    flex-wrap: wrap; /* <- permite quebra em múltiplas linhas */
+    gap: 8px;
+    display: flex;
   }
 
   /* BANNERS do Carousel */
@@ -733,7 +735,7 @@ body.dark .secao-hero-fundo {
     height: auto;
   }
 
-.prev,
+  .prev,
   .next {
     font-size: 24px;
     top: 50%;

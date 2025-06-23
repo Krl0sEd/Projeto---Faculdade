@@ -73,3 +73,80 @@ footer * {
   font-size: 0.8em;
   color: #ccc;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .contato-social {
+    text-align: left;
+  }
+
+  .logo img {
+    width: 180px;
+  }
+
+  .social-icons img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .selos img,
+  .envio img {
+    height: 50px;
+    margin: 5px 0;
+  }
+
+  .copyright {
+    text-align: left;
+    font-size: 0.75em;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 15px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .social-icons img {
+    max-width: 200px;
+  }
+
+  .selos img,
+  .envio img {
+    height: 40px;
+  }
+
+  .institucional h2 {
+    font-size: 1.2em;
+  }
+
+  .selos h3,
+  .envio h3 {
+    font-size: 0.9em;
+  }
+
+  .copyright {
+    font-size: 0.7em;
+  }
+}
+

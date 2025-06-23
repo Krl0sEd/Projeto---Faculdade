@@ -1,3 +1,4 @@
+// Inicío do script para manipulação do DOM e LocalStorage
 document.addEventListener("DOMContentLoaded", () => {
   const dados = JSON.parse(localStorage.getItem("dadosCadastro"));
   const usuarioDiv = document.getElementById("usuario");

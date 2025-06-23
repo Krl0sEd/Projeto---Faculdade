@@ -77,6 +77,7 @@ function validarCPF(cpf) {
   } else {
     emojiIcon.textContent = "☀️"; //default emoji no primeiro acesso
   }
+  
   // Se não houver tema salvo, assume o modo claro, só para garantir
   if (temaSalvo === "light" || !temaSalvo) {
   emojiIcon.textContent = "☀️";
