@@ -120,6 +120,7 @@ function validarCPF(cpf) {
 
     currentFontSize = novaTamanho;
 
+    // Salvar no LocalStorage
      localStorage.setItem('tamanhoFonte', novaTamanho);
   };
 
@@ -192,7 +193,6 @@ if (tamanhoSalvo) {
     }
 
     // Validação de data de nascimento
-
   if (dataNascimento < dataMinima || dataNascimento > hoje) {
     marcarCampo("data", true, "Por favor, informe uma data de nascimento válida.");
       return;

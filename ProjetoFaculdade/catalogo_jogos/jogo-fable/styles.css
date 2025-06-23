@@ -6,24 +6,27 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #2c1c4b;
     color: white;
 }
 
+/* Header */
 .icone img {
   height: 40px;
   width: auto;
-  margin: 0;
+  max-width: 100%;
+  display: block;
 }
 
  header {
   background-color: #352262;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
+  flex-wrap: wrap;
 }
 
 header img {
@@ -33,6 +36,7 @@ header img {
 .search-bar {
   flex: 1;
   margin: 0 2rem;
+  position: relative;
 }
 
 .search-bar input {
@@ -52,10 +56,12 @@ header img {
 }
 
 .header-buttons {
-   display: flex;
+  display: flex;
   align-items: center;
   gap: 24px; /* aqui define o espaço entre os 3 itens */
+  position: relative;
 }
+
 .header-buttons img {
   height: 24px;
   cursor: pointer;
@@ -63,9 +69,11 @@ header img {
 }
 
 .login-text {
-   color: #ffffff;
-  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 11px;
   text-align: center;
+  line-height: 1.2;
 }
 
 .login-button {
@@ -73,7 +81,7 @@ header img {
   flex-direction: column;
   align-items: center;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   text-align: center;
   text-decoration: none;
   font-size: 14px;
@@ -94,11 +102,11 @@ header img {
 }
 
 .darkmode-button, .cart-button {
-   display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   cursor: pointer;
   text-align: center;
 }
@@ -117,6 +125,7 @@ header img {
   line-height: 1.2;
 }
 
+/* Navbar */
 .navbar {
   background-color: #2B1B48;
   padding: 2px 0;
@@ -143,6 +152,7 @@ header img {
   list-style: none;
   margin: 0;
   padding: 10px 0;
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -150,11 +160,10 @@ header img {
   font-weight: bold;
   text-decoration: none;
   font-size: 18px;
-  margin: 0 120px;
 }
 
 .nav-links a {
-   color: white;
+  color: white;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
@@ -165,53 +174,60 @@ header img {
   text-decoration: underline;
 }
 
-.corpo {
+/* Corpo e Catálogo */
+    .corpo {
     display: flex;
     flex-direction: column;
 }
 
-    .catalogo {
+.catalogo {
         background-color: #d9d9d9;
         border: 1px solid black;
         color: black;
         display: flex;
         flex-direction: row;
+        padding: 10px;
        }
         
-
-        .catalogo-divisao {
+.catalogo-divisao {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
           }  
 
-            .last-of-us {
-                height: 500px;
-                margin: 30px;
+.fable {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 30px;
             }
 
-            .catalogo-subdivisao {
+     .catalogo-subdivisao {
                 display: flex;
                 flex-direction: column;
-                margin: auto 100px ;
+                margin: auto 100px;
+                max-width: 100%;
+                padding: 0 10px;
                 }
 
-                .catalogo-subdivisao h2 {
-                    margin-bottom: 30px ;
+      .catalogo-subdivisao h2 {
+                    margin-bottom: 30px;
                     font-size: 33px;
                 }
 
-                .catalogo-subdivisao p {
+      .catalogo-subdivisao p {
                     margin-bottom: 30px;
                 }
 
-                .catalogo-subdivisao h4 {
+      .catalogo-subdivisao h4 {
                     margin-bottom: 5px;
                     color: #ff0000;
                     font-size: 30px;
                     text-decoration-line: line-through;
                 }
 
-                .catalogo-subdivisao h3 {
+      .catalogo-subdivisao h3 {
                     font-size: 55px;
                     color: #13013f;
                 }
@@ -224,17 +240,16 @@ header img {
                     border: none;
                     border-radius: 5px;
                     margin-top: 70px;
+                    padding: 10px 20px;
                 }
-       
 
-    
-
+    /* Sinopse */           
     .sinopse {
         background-image: url(../images/fable-fundo.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        height: 100vh;
+        min-height: 100vh;
        }
         
         .sinopse h2 {
@@ -249,13 +264,13 @@ header img {
             text-shadow: 3px 3px 8px black;
         }
 
-        @media (max-width: 768px) {
-  
-
+/* Responsividade */
+@media (max-width: 768px) {
   .nav-links {
     flex-wrap: wrap;
     gap: 20px;
     padding: 10px;
+    justify-content: center;
   }
 
   .nav-links li a {
@@ -274,22 +289,85 @@ header img {
   }
 
   .catalogo-subdivisao {
-    margin: 20px;
+    margin: 20px 10px;
+    padding: 0 8px;
   }
 
-  .last-of-us {
+  .catalogo-divisao {
+    flex-direction: column;
+  }
+
+  .fable {
+    width: 100%;
+    max-width: 400px;
     height: auto;
-    max-width: 40%;
+    margin: 20px auto;
   }
 
-#botao {
-  height: 40px;
-  font-size: 100%;
-  font-weight: bold;
-  background-color: #CF74CF;
-  border: none;
-  border-radius: 5px;
-  margin-top: 70px;
+  #botao {
+    width: 100%;
+    max-width: 300px;
+    margin: 70px auto 0;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .header-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .header-buttons > div {
+    flex: 1 1 100px;
+    text-align: center;
+  }
+
+  .search-bar {
+    margin: 0;
+    width: 100%;
+  }
 }
 
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links li a {
+    margin: 0 5px;
+    font-size: 14px;
+  }
+
+  .catalogo-subdivisao {
+    margin: 10px;
+    padding: 0 8px;
+  }
+
+  .catalogo-subdivisao h2 {
+    font-size: 24px;
+  }
+
+  .catalogo-subdivisao h3 {
+    font-size: 32px;
+  }
+
+  .header-buttons > div {
+    flex: 1 1 120px;
+    text-align: center;
+  }
+
+  #botao {
+    width: 100%;
+    max-width: none;
+  }
 }
