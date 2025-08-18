@@ -18,12 +18,13 @@ O objetivo do projeto é desenvolver a interface (front-end) de um site para a e
 
 ## 💡 Funcionalidades
 
-- [] Tela de Cadastro com validações de formulário
-- [] Armazenamento de dados no `localStorage`
+- [X] Tela de Cadastro com validações de formulário
+- [X] Armazenamento de dados no `localStorage`
 - [X] Tela de Login com feedback visual
-- [] Página principal com menu interativo
-- [ ] Telas internas com conteúdos dos serviços
-- [ ] Acessibilidade (modo escuro e ajuste de fonte)
+- [X] Página principal com menu interativo
+- [X] Telas internas com conteúdos dos serviços
+- [X] Acessibilidade (modo escuro e ajuste de fonte)
+- [ ] Integração com banco de dados
 
 ---
 
@@ -52,7 +53,7 @@ Veja o arquivo de "LICENSE" para mais informações.
 
 👩‍💻 Colaborador principal
 
-**Carlos Eduardo de Oliveira Bucazio**
+Carlos Eduardo de Oliveira Bucazio
 💻 Estudante de **Análise e Desenvolvimento de Sistemas** | Foco em **Desenvolvimento Web & Redes**
 📧 Email: [cbucazio@gmail.com](mailto:cbucazio@gmail.com)
 🌐 GitHub: [Krl0sEd](https://github.com/Krl0sEd)
