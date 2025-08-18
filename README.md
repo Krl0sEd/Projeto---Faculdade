@@ -60,5 +60,6 @@ Carlos Eduardo de Oliveira Bucazio
 🌐 GitHub: [Krl0sEd](https://github.com/Krl0sEd)
 🧑‍💼 Linkedin: [linkedin.com/in/carlos-eduardo-de-oliveira-bucazio-516a7937a](https://www.linkedin.com/in/carlos-eduardo-de-oliveira-bucazio-516a7937a)
 
+
 ---
 
