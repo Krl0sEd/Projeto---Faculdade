@@ -43,6 +43,7 @@ O objetivo do projeto é desenvolver a interface (front-end) de um site para a e
 1. Clone este repositório:
 ```bash
 git clone https://github.com/Krl0sEd/Projeto---Faculdade.git
+````
 
 2. Procure pela pasta onde foi clonado o projeto e abra o arquivo html
 
