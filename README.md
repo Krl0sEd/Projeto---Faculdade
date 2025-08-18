@@ -52,7 +52,7 @@ Esse projeto está sob licenciado pela licença MIT.
 Veja o arquivo de "LICENSE" para mais informações.
 
 
-👩‍💻 Colaborador principal
+## 👩‍💻 Colaborador principal
 
 Carlos Eduardo de Oliveira Bucazio
 💻 Estudante de **Análise e Desenvolvimento de Sistemas** | Foco em **Desenvolvimento Web & Redes**
