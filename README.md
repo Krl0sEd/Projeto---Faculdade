@@ -54,7 +54,7 @@ Veja o arquivo de "LICENSE" para mais informações.
 
 ## 👩‍💻 Colaborador principal
 
-- **Carlos Eduardo de Oliveira Bucazio**
+**Carlos Eduardo de Oliveira Bucazio**
 - 💻 Estudante de **Análise e Desenvolvimento de Sistemas** | Foco em **Desenvolvimento Web & Redes**
 - 📧 **Email**: [cbucazio@gmail.com](mailto:cbucazio@gmail.com)
 - 🌐 **GitHub**: [Krl0sEd](https://github.com/Krl0sEd)
