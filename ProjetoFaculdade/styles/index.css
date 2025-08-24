@@ -1,0 +1,897 @@
+/* Resetando o overflow-x para evitar rolagem horizontal */
+html, body {
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body { 
+ margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;  
+  color: black;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.icone img {
+  height: 40px;
+  width: auto;
+  margin: 0;
+}
+
+/* Cabeçalho */
+ header {
+  background-color: #352262;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: white;
+  gap: 12px; /* adiciona espaçamento entre os blocos */
+}
+
+header img {
+  height: 40px;
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 7000px; /* ou ajuste para o valor que eu quiser, ex: 300px */
+  margin: 0 2rem;
+  position: relative; /* necessário se o botão da search estiver com position absolute */
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.search-bar button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header-buttons img {
+  height: 24px;
+  cursor: pointer;
+}
+
+.login-text {
+   color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.login-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: 'Montserrat', Arial, sans-serif;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.login-icon {
+  width: 24px;
+  height: auto;
+  margin-bottom: 4px;
+}
+
+.login-text {
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.login-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botões de configurações*/
+.botoes_de_configuracoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-button {
+  margin-left: 20px; /* separa o carrinho do grupo anterior */
+}
+
+.darkmode-button, .cart-button {
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: 'Montserrat', Arial, sans-serif;
+  cursor: pointer;
+  text-align: center;
+}
+
+.darkmode-button span {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* puxa para a esquerda em relação ao próximo elemento (cart-button) */
+.darkmode-button {
+  margin-right: 20px; 
+}
+
+.darkmode-icon {
+  width: 24px;
+  height: auto;
+  margin-bottom: 4px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.cart-text {
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Botão de Aumentar/Diminuir tamanho de fonte */
+.botoes_da_fonte{
+  font-size: 14px;
+  padding: 4px 8px;
+  display: flex;
+  z-index: 1000;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.botoes_da_fonte button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #cf74cf; /* opcional: mantém contorno roxo */
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+.botoes_da_fonte button:hover {
+  background-color: rgba(207, 116, 207, 0.2); /* leve roxinho translúcido */
+  transform: scale(1.05);
+}
+/* Navbar */
+.navbar {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  background-color: #2B1B48;
+  padding: 2px 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+}
+
+.nav-links {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem; /* ou o valor que quisermos entre os itens */
+  list-style: none;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.nav-links li a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 225px;
+}
+
+.nav-links a {
+   color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Meu do usuário */
+#usuario-menu p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+#usuario-menu {
+  min-width: 150px;
+}
+
+#usuario {
+  color: white;
+  font-weight: 600;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 16px;
+}
+
+#usuario-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.banner,
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.prev { left: 20px;}
+
+.next { right: 20px;}
+
+.banner button:hover {
+  background-color: rgba(204, 10, 130, 0.822);
+}
+
+.carousel {
+  width: 100%;
+  height: auto;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+.slide {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Destaques */
+.destaques {
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.destaques h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.destaques-container {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center; /* centraliza os itens */
+  padding: 0 20px; /* espaçamento nas laterais */
+}
+
+.jogo {
+  background-color: white;
+  width: 200px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 360px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jogo:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.jogo img {
+  width: 100%;
+  height: 60%;
+  border-radius: 5px;
+}
+
+.jogo h3 {
+  font-size: 15px;
+  margin: 10px 0 5px;
+  flex-grow: 1;
+}
+
+
+.jogo p {
+  font-weight: bold;
+  margin: 5px 0;
+  font-size: 25px;
+  color: #333;
+}
+
+/* Botão de conferir jogos */
+.btn {
+  background-color: #b67dd4 !important;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: auto; 
+  text-decoration: none; /* Remove sublinhado do link */
+  display: inline-block; /* Faz o link se comportar como botão */
+
+}
+
+.btn:hover {
+  background-color: #a263c0;
+}
+
+.loot-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #69539D;
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  position: relative;
+  overflow: visible;
+  max-width: 1300px;
+  width: 100%;
+  margin: 80px auto;
+}
+
+.secao-hero-fundo {
+  padding: 40px 0;
+  justify-content: center;
+  background-color: #e8e1f4; /* cor do fundo do banner hero */
+}
+
+.textos {
+  max-width: 80%;
+  margin-left: 20%;
+}
+
+.titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.título-destaques {
+  font-size: 28px;
+  color: white;
+  margin: 30px 40px 10px 40px;
+  text-align: left;
+}
+
+.titulo-destaques h2 {
+  font-size: 28px;
+  color: #333;
+
+}
+.subtitulo {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.imagem-wrapper img {
+  position: absolute;
+  right: 130px;
+  bottom: -10px;
+  width: 26%;
+}
+
+.btnbanner {
+  background-color: #CF74CF;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.btnbanner:hover {
+  background-color: #b46fb4;
+}
+
+.compra-garantida {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 30px 40px;
+  margin: 80px auto;
+  max-width: 1200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.bloco-texto-e-icon {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.compra-garantida .icon img {
+  width: 100px;
+  height: 90px;
+}
+
+.compra-garantida .texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.compra-garantida .texto strong {
+  font-size: 18px;
+  color: #333;
+}
+
+.compra-garantida .texto span {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.compra-garantida .pagamentos {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.compra-garantida .pagamentos img {
+  width: 100px;
+  height: 80px;
+}
+
+.footer {
+  padding: 40px 60px;
+  background-color: #352262;
+  color: white;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  
+}
+
+.institucional {
+  max-width: 800px;
+  
+}
+
+.institucional h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.contato-social {
+  text-align: right;
+}
+
+.logo img {
+  width: 220px;
+  margin-bottom: 10px;
+}
+
+.logo.h1 {
+  font-size: 28px;
+  color: white;
+  margin: 0;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-icons img {
+  width: 350px;
+  margin-top: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+}
+
+.selos img, .envio img {
+  height: 65px;
+  margin-right: 10px;
+}
+
+.selos h3, .envio h3 {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.copyright {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.8em;
+  color: #ccc;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212 !important;
+  color: white !important;
+}
+
+body.dark .jogo p {
+  color: #f5a623; /* cor amarela para o preço dos jogos no Dark Mode */
+}
+
+body.dark header {
+  background-color: #1a112f; /* darkmode do header */
+}
+
+body.dark .navbar  {
+  background-color: #280e66; /* Dark mode da navbar */
+}
+
+.destaques.dark {
+  background-color: #1e1e1e;
+}
+
+.jogo.dark {
+  background-color: #2a2a2a;
+  color: #eee;
+}
+
+.navbar.dark {
+  background-color: #222;
+}
+
+body.dark .secao-hero-fundo {
+  background-color: #181818 /* roxo escuro */
+}
+
+.footer.dark {
+  background-color: #111;
+}
+
+.loot-banner.dark {
+  background-color: #333;
+}
+
+.compra-garantida.dark {
+  background-color: #222;
+}
+
+/* --- Responsividade para telas menores que 768px (celulares/tablets) --- */
+@media (max-width: 768px) { 
+  /* NAVBAR */
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 0;
+  }
+
+  .nav-links li a {
+    margin: 0; /* Remove os 225px de margem lateral */
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  /* HEADER */
+  header {
+    flex-direction: column;
+    align-items: stretch; /* força largura total nos filhos */
+    gap: 16px;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 0;
+  }
+
+  .header-buttons,
+  .botoes_de_configuracoes,
+  .login-area {
+    width: 100%; /* <- garante que eles usem o espaço da tela no mobile */
+    justify-content: center;
+    flex-wrap: wrap; /* <- permite quebra em múltiplas linhas */
+    gap: 8px;
+    display: flex;
+  }
+
+  /* BANNERS do Carousel */
+  .banner img {
+    height: auto;
+    object-fit: cover;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .imagem-wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .prev,
+  .next {
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .dots {
+    bottom: 10px;
+  }
+
+  /* BANNER HERO */
+  .loot-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .textos {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .imagem-wrapper img {
+    position: static;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto 0;
+  }
+
+  /* DESTAQUES */
+  .destaques-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    align-items: center;
+  }
+
+  /* COMPRA GARANTIDA */
+  .compra-garantida {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .compra-garantida .pagamentos {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .compra-garantida .icon img {
+    width: 80px;
+    height: auto;
+  }
+
+  /* FOOTER */
+  .footer-container,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .contato-social {
+    text-align: center;
+  }
+
+  .social-icons img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* CARDS DE JOGOS */
+  .jogo {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/* --- Estilos adicionais para telas MUITO pequenas (até 480px) --- */
+@media (max-width: 480px) {
+  /* Botão para abrir menu mobile (você precisa criar esse botão no HTML se quiser usá-lo) */
+  #menu-toggle {
+    display: block;
+    font-size: 26px;
+    margin: 10px auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 0;
+    background-color: #2B1B48;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Títulos e textos menores */
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .subtitulo {
+    font-size: 0.9rem;
+  }
+
+  /* Padding e espaço reduzido nos blocos principais */
+  .loot-banner,
+  .compra-garantida,
+  .footer,
+  .destaques {
+    padding: 15px;
+  }
+
+  /* Redimensionar imagens grandes */
+  .imagem-wrapper img,
+  .compra-garantida .icon img,
+  .social-icons img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  /* Cartões de jogos mais compactos */
+  .jogo {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px;
+    min-height: 300px;
+  }
+
+  .jogo h3 {
+    font-size: 14px;
+  }
+
+  .jogo p {
+    font-size: 20px;
+  }
+
+  /* Footer centralizado */
+  .footer-container,
+  .footer-bottom {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .contato-social {
+    text-align: center;
+  }
+}
